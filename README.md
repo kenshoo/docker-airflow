@@ -10,7 +10,7 @@ This repository contains **Dockerfile** of [apache-airflow](https://github.com/a
 
 ## Informations
 
-* Based on Python (3.6-stretch) official Image [python:3.6-stretch](https://hub.docker.com/_/python/) and uses the official [Postgres](https://hub.docker.com/_/postgres/) as backend and [Redis](https://hub.docker.com/_/redis/) as queue
+* Based on Python (3.6-stretch) official Image [python:3.6-stretch](https://hub.docker.com/_/python/) and uses the official [MYSQL]  as backend and [Redis](https://hub.docker.com/_/redis/) as queue
 * Install [Docker](https://www.docker.com/)
 * Install [Docker Compose](https://docs.docker.com/compose/install/)
 * Following the Airflow release from [Python Package Index](https://pypi.python.org/pypi/apache-airflow)
@@ -52,8 +52,8 @@ NB : If you don't want to have DAGs example loaded (default=True), you've to set
         docker run -d -p 8080:8080 -e LOAD_EX=n puckel/docker-airflow
 
 If you want to use Ad hoc query, make sure you've configured connections:
-Go to Admin -> Connections and Edit "postgres_default" set this values (equivalent to values in airflow.cfg/docker-compose*.yml) :
-- Host : postgres
+Go to Admin -> Connections and Edit "mysql_default" set this values (equivalent to values in airflow.cfg/docker-compose*.yml) :
+- Host : mysql
 - Schema : airflow
 - Login : airflow
 - Password : airflow
